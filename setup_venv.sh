@@ -2,6 +2,9 @@
 #!/bin/bash
 # setup_venv.sh - Configura ambiente virtual automaticamente
 #
+#   Para executar no linux 1º:>  chmod +x setup_venv.sh
+#                          2º:>  ./setup_venv.sh
+#
 #Data: 14/04/2026
 #====================================================================================================
 
