@@ -11,6 +11,13 @@ echo "=========================================="
 
 # Nome do ambiente virtual
 VENV_NAME="marcatili_env"
+
+echo "📦 Instalando python3-venv..."
+sudo apt install -y python3-venv python3-full
+python3 -m venv marcatili_env
+source marcatili_env/bin/activate
+pip install numpy matplotlib pyinstaller    
+
 echo ""
 echo "✅ Ambiente virtual criado com sucesso!"
 echo ""
@@ -21,7 +28,6 @@ echo ""
 echo "Para sair:"
 echo "  deactivate"
 
-python3 -m venv marcatili_env
-source marcatili_env/bin/activate
+
 python3 main.py
 deactivate
