@@ -200,6 +200,9 @@ class MarcatiliGUI:
         
         self.export_btn = ttk.Button(frame, text="EXPORTAR DADOS", command=self._on_export, state='disabled')
         self.export_btn.pack(fill=tk.X, pady=5)
+
+        self.export_btn = ttk.Button(frame, text="LIMPAR TUDO", command=exit)
+        self.export_btn.pack(fill=tk.X, pady=5)
     
     def _create_results_frame(self, parent):
         """Cria frame para exibição de resultados"""
@@ -290,8 +293,8 @@ class MarcatiliGUI:
             
         except ValueError as e:
             messagebox.showerror("Erro de Entrada", str(e))
-            return False
-    
+            return False 
+            
     def _on_calculate(self):
         """Callback do botão calcular"""
         if not self._validate_inputs():

@@ -2,9 +2,9 @@
 """
 ====================================================================================================
 Controller - Gerencia a comunicação entre Model e View
-Implementa o padrão MVC
+Implementa o padrão MVC com observers
 
-Data: 13/04/2026
+Data: 14/04/2026
 ====================================================================================================
 """
 
@@ -94,3 +94,11 @@ class MarcatiliController:
         x_um = self._results.x_grid * 1e6
         y_um = self._results.y_grid * 1e6
         return x_um, y_um, self._results.field, self._results.intensity
+
+    def reset(self):
+        """Retorna os dados do campo para plotagem"""
+        self._params = None
+        self._model = None
+        self._results = None
+        self._notify_observers()   
+        

@@ -281,11 +281,12 @@ class WaveguideModel:
             status_V = "Região multimodo"
         
         return f"""
-{'='*70}
+{'='*49}
 RESULTADOS NUMÉRICOS - MÉTODO DE MARCATILI
-{'='*70}
+{'='*49}
 
---- PARÂMETROS DO GUIA ---
+------------- PARÂMETROS DO GUIA --------------
+
 Largura do núcleo (2a)        : {params.width*1e6:.3f} µm
 Altura do núcleo (2b)         : {params.height*1e6:.3f} µm
 Comprimento de onda (λ)       : {params.wavelength*1e6:.3f} µm
@@ -293,22 +294,37 @@ Comprimento de onda (λ)       : {params.wavelength*1e6:.3f} µm
 Índice do revestimento (n₂)   : {params.n_cladding:.4f}
 Diferença relativa (Δ)        : {params.delta:.4f} %
 
---- PARÂMETROS DO MODO ---
+------------- PARÂMETROS DO MODO -------------
+
 Modo                          : {tipo_modo}
 kx (componente x)             : {res.kx:.3e} rad/m
 ky (componente y)             : {res.ky:.3e} rad/m
 
---- CONSTANTES DE PROPAGAÇÃO ---
+----------- CONSTANTES DE PROPAGAÇÃO ----------
+
 Constante de propagação (β)   : {res.beta:.3e} rad/m
 Índice efetivo (n_eff)        : {res.n_eff:.6f}
 Status                        : {status_modo}
 
---- CONSTANTES DE DECAIMENTO ---
+----------- CONSTANTES DE DECAIMENTO ----------
+
 γx (decaimento em x)          : {res.gamma_x:.3e} m⁻¹
 γy (decaimento em y)          : {res.gamma_y:.3e} m⁻¹
 
---- FREQUÊNCIA NORMALIZADA ---
+------------ FREQUÊNCIA NORMALIZADA ------------
+
 Parâmetro V                   : {res.V:.4f}
 Status                        : {status_V}
-{'='*70}
+{'='*49}
+
+
+
+
+
+
+
+
+
+
+
 """
